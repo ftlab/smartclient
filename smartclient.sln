@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartclient.wf", "smartclie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartclient.wf.app", "smartclient.wf.app\smartclient.wf.app.csproj", "{E4CDD7DB-68F6-4EE5-8273-81E50D9D5AD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wf", "wf", "{4EA97560-5FA8-40A1-A6DC-72253DE09A68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{2CD8BCE6-AE10-4B0A-8E80-7597191E052C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{6D416C16-AEC3-466F-9F3B-3283DBC8400B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +36,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E85B7F5D-91A8-4327-9547-8602DA660EB3} = {6D416C16-AEC3-466F-9F3B-3283DBC8400B}
+		{4A476B23-84F3-49A5-A950-DB7BDF928C01} = {4EA97560-5FA8-40A1-A6DC-72253DE09A68}
+		{E4CDD7DB-68F6-4EE5-8273-81E50D9D5AD0} = {2CD8BCE6-AE10-4B0A-8E80-7597191E052C}
 	EndGlobalSection
 EndGlobal
