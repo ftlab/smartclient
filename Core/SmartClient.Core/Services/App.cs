@@ -35,9 +35,6 @@ namespace SmartClient.Core.AppModel
                   onClosing?.Invoke();
               };
 
-#if DEBUG
-            Thread.Sleep(3000);
-#endif
             Init();
             Application.Run(MainForm.Instance);
         }
