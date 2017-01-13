@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08630132-1E23-4D2F-A0A4-5F0238E55038}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartClient.Core</RootNamespace>
+    <AssemblyName>SmartClient.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppModel\App.cs" />
+    <Compile Include="AppModel\App.Init.cs" />
+    <Compile Include="AppModel\AppRegistrator.cs" />
+    <Compile Include="AppModel\BaseModule.cs" />
+    <Compile Include="AppModel\Builder\ModuleInfoBuilder.cs" />
+    <Compile Include="AppModel\EnvModule.cs" />
+    <Compile Include="AppModel\IEnvModule.cs" />
+    <Compile Include="AppModel\IModule.cs" />
+    <Compile Include="AppModel\IModuleConfig.cs" />
+    <Compile Include="AppModel\IModuleRepository.cs" />
+    <Compile Include="AppModel\Info\BaseInfo.cs" />
+    <Compile Include="AppModel\Info\CommandInfo.cs" />
+    <Compile Include="AppModel\Info\ContainerInfo.cs" />
+    <Compile Include="AppModel\Info\ContainerType.cs" />
+    <Compile Include="AppModel\Info\ISupportCommands.cs" />
+    <Compile Include="AppModel\Info\ISupportViews.cs" />
+    <Compile Include="AppModel\Info\ModuleInfo.cs" />
+    <Compile Include="AppModel\Info\QuickButtonViewInfo.cs" />
+    <Compile Include="AppModel\Info\TileSize.cs" />
+    <Compile Include="AppModel\Info\ViewInfo.cs" />
+    <Compile Include="AppModel\Info\ViewType.cs" />
+    <Compile Include="AppModel\ModuleRepository.cs" />
+    <Compile Include="Attributes\CustomFilterAttribute.cs" />
+    <Compile Include="Attributes\SearchLookupBindingAttribute.cs" />
+    <Compile Include="Attributes\TreeListLookUpBindingAttribute.cs" />
+    <Compile Include="Components\CustomColors.cs" />
+    <Compile Include="Components\IndicatorNumerator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\IndicatorNumerator.Designer.cs">
+      <DependentUpon>IndicatorNumerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WorkLock.cs" />
+    <Compile Include="Config\ModuleElement.cs" />
+    <Compile Include="Config\ModuleElementCollection.cs" />
+    <Compile Include="Config\ModulesSection.cs" />
+    <Compile Include="Container\ServiceContainer.cs" />
+    <Compile Include="Container\ServiceContainerRegistrator.cs" />
+    <Compile Include="Controls\BlockDetector.cs" />
+    <Compile Include="Controls\DataLayoutControl\DataLayoutControlExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataLayoutControl\IBindingDataProvider.cs" />
+    <Compile Include="Controls\DataLayoutControl\IHasBindingDataProvider.cs" />
+    <Compile Include="Controls\DataLayoutControl\LayoutCreatorExt.cs" />
+    <Compile Include="Controls\Edits\FtDateEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FillButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TileCustomizer.cs" />
+    <Compile Include="Controls\ViewCommandCustomizer.cs" />
+    <Compile Include="Controls\WindowsUIViewExtension.cs" />
+    <Compile Include="Forms\SmartSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SmartSplashScreen.designer.cs">
+      <DependentUpon>SmartSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SmartWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SmartWaitForm.Designer.cs">
+      <DependentUpon>SmartWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FlyoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IMainForm.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuickRibbonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Messages\GoBackEvent.cs" />
+    <Compile Include="Messages\GoToHomeEvent.cs" />
+    <Compile Include="Messages\IncomingMessageEvent.cs" />
+    <Compile Include="Messages\NavigateToViewEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IDialogService.cs" />
+    <Compile Include="Services\IHotkeyService.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\Impl\DefaultDialogService.cs" />
+    <Compile Include="Services\Impl\DefaultHotkeyService.cs" />
+    <Compile Include="Services\Impl\DefaultMessageService.cs" />
+    <Compile Include="Services\Impl\DefaultNotificationService.cs" />
+    <Compile Include="Services\Impl\DefaultUserSettingsService.cs" />
+    <Compile Include="Services\Impl\DefaultWaitService.cs" />
+    <Compile Include="Services\INotificationService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IUserSettingsService.cs" />
+    <Compile Include="Services\IWaitService.cs" />
+    <Compile Include="ViewModels\BaseNavViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BaseWizardPageViewModel.cs" />
+    <Compile Include="ViewModels\BaseWizardViewModel.cs" />
+    <Compile Include="ViewModels\DictionaryCommand.cs" />
+    <Compile Include="ViewModels\DictionaryInfoAttribute.cs" />
+    <Compile Include="ViewModels\ITreeItemViewModel.cs" />
+    <Compile Include="ViewModels\ITreeListViewModel.cs" />
+    <Compile Include="ViewModels\NavNode.cs" />
+    <Compile Include="ViewModels\ViewCommand.cs" />
+    <Compile Include="Views\BaseDictionaryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseDictionaryView.Designer.cs">
+      <DependentUpon>BaseDictionaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseEditView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseEditView.Designer.cs">
+      <DependentUpon>BaseEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseListDictionaryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseListDictionaryView.Designer.cs">
+      <DependentUpon>BaseListDictionaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseTreeListDictionaryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseTreeListDictionaryView.Designer.cs">
+      <DependentUpon>BaseTreeListDictionaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseViewContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseViewContainer.Designer.cs">
+      <DependentUpon>BaseViewContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseWizardPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseWizardPage.Designer.cs">
+      <DependentUpon>BaseWizardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseWizardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BaseWizardView.Designer.cs">
+      <DependentUpon>BaseWizardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom\AboutView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom\AboutView.Designer.cs">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom\EditBoxView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom\EditBoxView.Designer.cs">
+      <DependentUpon>EditBoxView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom\Model\UserSettings.cs" />
+    <Compile Include="Views\Custom\SkinSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom\SkinSelector.Designer.cs">
+      <DependentUpon>SkinSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom\UserSettingsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom\UserSettingsView.Designer.cs">
+      <DependentUpon>UserSettingsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Custom\ViewNotFoundView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Custom\ViewNotFoundView.Designer.cs">
+      <DependentUpon>ViewNotFoundView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FlatView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\FlatView.Designer.cs">
+      <DependentUpon>FlatView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IDictionaryView.cs" />
+    <Compile Include="Views\IEmbeddableView.cs" />
+    <Compile Include="Views\ISupportDialogResult.cs" />
+    <Compile Include="Views\ISupportKeyProcess.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\NavView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NavView.Designer.cs">
+      <DependentUpon>NavView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageView.Designer.cs">
+      <DependentUpon>PageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RibbonView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RibbonView.Designer.cs">
+      <DependentUpon>RibbonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkSpaceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\WorkSpaceView.Designer.cs">
+      <DependentUpon>WorkSpaceView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\SmartSplashScreen.resx">
+      <DependentUpon>SmartSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SmartWaitForm.resx">
+      <DependentUpon>SmartWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseDictionaryView.resx">
+      <DependentUpon>BaseDictionaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseEditView.resx">
+      <DependentUpon>BaseEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseListDictionaryView.resx">
+      <DependentUpon>BaseListDictionaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseTreeListDictionaryView.resx">
+      <DependentUpon>BaseTreeListDictionaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseViewContainer.resx">
+      <DependentUpon>BaseViewContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseWizardPage.resx">
+      <DependentUpon>BaseWizardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BaseWizardView.resx">
+      <DependentUpon>BaseWizardView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom\AboutView.resx">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom\EditBoxView.resx">
+      <DependentUpon>EditBoxView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom\SkinSelector.resx">
+      <DependentUpon>SkinSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom\UserSettingsView.resx">
+      <DependentUpon>UserSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Custom\ViewNotFoundView.resx">
+      <DependentUpon>ViewNotFoundView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FlatView.resx">
+      <DependentUpon>FlatView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NavView.resx">
+      <DependentUpon>NavView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageView.resx">
+      <DependentUpon>PageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RibbonView.resx">
+      <DependentUpon>RibbonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkSpaceView.resx">
+      <DependentUpon>WorkSpaceView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\container.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editcontact_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editProperties_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hight_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon512_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resetchanges_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\theme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\w8loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Animator\Animator.csproj">
+      <Project>{2D0EE5EA-17A7-4113-A264-18A0C071A711}</Project>
+      <Name>Animator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{d887ea99-c610-4764-9182-964d30666eac}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
