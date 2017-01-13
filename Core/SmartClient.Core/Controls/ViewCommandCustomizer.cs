@@ -36,7 +36,7 @@ namespace SmartClient.Core.Controls
             if (string.IsNullOrEmpty(command.ToolTip) == false)
             {
                 var superTip = new SuperToolTip();
-                superTip.Items.Add(new ToolTipTitleItem() {Text = command.ToolTip});
+                superTip.Items.Add(new ToolTipTitleItem() { Text = command.ToolTip });
                 btn.SuperTip = superTip;
             }
             group.ItemLinks.Add(btn);

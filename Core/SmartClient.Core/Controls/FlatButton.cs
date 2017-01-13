@@ -8,7 +8,7 @@ using DevExpress.XtraEditors.Drawing;
 namespace SmartClient.Core.Controls
 {
     [ToolboxItem(true)]
-    public class FlatButton: SimpleButton
+    public class FlatButton : SimpleButton
     {
         public FlatButton()
         {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using SmartClient.Core.Forms;
-using SmartClient.Core.Services;
 using Microsoft.Practices.Unity;
 using System.Threading;
 

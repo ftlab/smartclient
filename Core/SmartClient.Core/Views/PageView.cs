@@ -1,6 +1,4 @@
-﻿using DevExpress.XtraEditors;
-
-namespace SmartClient.Core.Views
+﻿namespace SmartClient.Core.Views
 {
     public partial class PageView : FlatView
     {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.XtraDataLayout;
+﻿using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using SmartClient.Core.Attributes;
@@ -13,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SmartClient.Core.Controls.DataLayoutControl
 {
-    public class DataLayoutControlExt: DevExpress.XtraDataLayout.DataLayoutControl, IHasBindingDataProvider
+    public class DataLayoutControlExt : DevExpress.XtraDataLayout.DataLayoutControl, IHasBindingDataProvider
     {
         public IBindingDataProvider BindingDataProvider { get; set; }
         protected internal PropertyDescriptorCollection propertyDescriptors;

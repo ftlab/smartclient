@@ -7,7 +7,7 @@ namespace SmartClient.Core.Config
         [ConfigurationProperty("", IsDefaultCollection = true)]
         public ModuleElementCollection Modules
         {
-            get { return (ModuleElementCollection) base[""]; }
+            get { return (ModuleElementCollection)base[""]; }
         }
     }
 }

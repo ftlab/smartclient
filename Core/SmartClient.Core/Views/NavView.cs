@@ -16,30 +16,6 @@ namespace SmartClient.Core.Views
         }
 
 
-        //public void AddButtons()
-        //{
-        //	var group = ribbonPageGroup1;
-
-        //	var oldItems = group.ItemLinks.OfType<BarButtonItemLink>()
-        //		.Where(x => x.Item.Tag is ViewCommand)
-        //		.ToList();
-        //	oldItems.ForEach(x =>
-        //	{
-        //		x.Item.ItemClick -= Command_ItemClick;
-        //		group.ItemLinks.Remove(x);
-        //	});
-
-        //	var view = viewContainer1.ActiveView;
-        //	view?.GetCommands()
-        //		.ToList()
-        //		.ForEach(command =>
-        //		{
-        //			var btn = ViewCommandCustomizer.AddToRibbon(ribbonControl1, command);
-        //			btn.ItemClick += Command_ItemClick;
-        //		});
-        //}
-
-
         private async void Command_ItemClick(object sender, ItemClickEventArgs e)
         {
             var view = viewContainer1.ActiveView;
@@ -68,16 +44,6 @@ namespace SmartClient.Core.Views
             ribbonPage1.Groups.OfType<RibbonPageGroup>().ForEach(
                 rpg => { rpg.Visible = false; }
                 );
-            //var group = ribbonPageGroup1;
-
-            //var oldItems = group.ItemLinks.OfType<BarBaseButtonItemLink>()
-            //    .Where(x => x.Item.Tag is ViewCommand)
-            //    .ToList();
-            //oldItems.ForEach(x =>
-            //{
-            //    x.Item.ItemClick -= Command_ItemClick;
-            //    group.ItemLinks.Remove(x);
-            //});
 
             var view = viewContainer1.ActiveView;
             view?.GetCommands()

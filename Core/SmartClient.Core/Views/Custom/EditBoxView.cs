@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmartClient.Core.Container;
-using DevExpress.XtraEditors;
 
 namespace SmartClient.Core.Views.Custom
 {

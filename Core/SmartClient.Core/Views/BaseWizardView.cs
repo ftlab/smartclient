@@ -3,7 +3,6 @@ using SmartClient.Core.Messages;
 using SmartClient.Core.ViewModels;
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
-using DevExpress.XtraEditors;
 
 namespace SmartClient.Core.Views
 {

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
@@ -11,7 +8,7 @@ using DevExpress.Data.Filtering;
 
 namespace SmartClient.Core.Controls.DataLayoutControl
 {
-    public class LayoutCreatorExt: LayoutCreator
+    public class LayoutCreatorExt : LayoutCreator
     {
         protected DataLayoutControlExt _dataLayoutControlExt;
         public LayoutCreatorExt(DataLayoutControlExt dataLayoutControlExt)
@@ -28,13 +25,13 @@ namespace SmartClient.Core.Controls.DataLayoutControl
                 var searchLookupEdit = ctrl as SearchLookUpEdit;
                 searchLookupEdit.Popup -= LookupEdit_Popup;
                 searchLookupEdit.Popup += LookupEdit_Popup;
-                
+
                 var searchLookupAttr =
-                    elementBi.DataInfo.PropertyDescriptor.Attributes[typeof (SearchLookUpBindingAttribute)] as
+                    elementBi.DataInfo.PropertyDescriptor.Attributes[typeof(SearchLookUpBindingAttribute)] as
                         SearchLookUpBindingAttribute;
                 if (searchLookupAttr != null && _dataLayoutControlExt.BindingDataProvider != null)
-                        searchLookupEdit.Properties.DataSource =
-                            _dataLayoutControlExt.BindingDataProvider.GetData(searchLookupAttr.DataSourceType);
+                    searchLookupEdit.Properties.DataSource =
+                        _dataLayoutControlExt.BindingDataProvider.GetData(searchLookupAttr.DataSourceType);
             }
             if (ctrl is TreeListLookUpEdit)
             {
@@ -47,8 +44,8 @@ namespace SmartClient.Core.Controls.DataLayoutControl
                         TreeListLookUpBindingAttribute;
                 if (treeListLookupAttr != null && _dataLayoutControlExt.BindingDataProvider != null)
                 {
-                   treeListLookupEdit.Properties.DataSource =
-                            _dataLayoutControlExt.BindingDataProvider.GetData(treeListLookupAttr.DataSourceType);
+                    treeListLookupEdit.Properties.DataSource =
+                             _dataLayoutControlExt.BindingDataProvider.GetData(treeListLookupAttr.DataSourceType);
                 }
             }
             return ctrl;
@@ -57,7 +54,7 @@ namespace SmartClient.Core.Controls.DataLayoutControl
         private void LookupEdit_Popup(object sender, EventArgs e)
         {
             LookUpEditBase lookupEdit = sender as LookUpEditBase;
-            if (lookupEdit.DataBindings.Count == 0 || _dataLayoutControlExt.propertyDescriptors==null) return;
+            if (lookupEdit.DataBindings.Count == 0 || _dataLayoutControlExt.propertyDescriptors == null) return;
 
             var field = lookupEdit.DataBindings[0].BindingMemberInfo.BindingField;
             var pd = _dataLayoutControlExt.propertyDescriptors[field];
@@ -78,16 +75,16 @@ namespace SmartClient.Core.Controls.DataLayoutControl
                         var value = fpd.GetValue(_dataLayoutControlExt.Current);
                         values.Add(value);
                     }
-                    criteriaOperator = CriteriaOperator.Parse(customFilterAttr.FilterString,values.ToArray());
+                    criteriaOperator = CriteriaOperator.Parse(customFilterAttr.FilterString, values.ToArray());
                 }
                 else
                     criteriaOperator = CriteriaOperator.Parse(customFilterAttr.FilterString);
 
-                if(lookupEdit is SearchLookUpEdit)
+                if (lookupEdit is SearchLookUpEdit)
                     (lookupEdit as SearchLookUpEdit).Properties.View.ActiveFilterCriteria = criteriaOperator;
                 else if (lookupEdit is TreeListLookUpEdit)
                     (lookupEdit as TreeListLookUpEdit).Properties.TreeList.ActiveFilterCriteria = criteriaOperator;
             }
-        }        
+        }
     }
 }

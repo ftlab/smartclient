@@ -2,7 +2,7 @@
 
 namespace SmartClient.Core.Config
 {
-    [ConfigurationCollection(typeof (ModuleElement),
+    [ConfigurationCollection(typeof(ModuleElement),
         CollectionType = ConfigurationElementCollectionType.AddRemoveClearMap)]
     public class ModuleElementCollection : ConfigurationElementCollection
     {

@@ -15,8 +15,7 @@ namespace SmartClient.Core.Controls
         {
             var document = view.AddDocument(control);
 
-            if (action != null)
-                action(document);
+            action?.Invoke(document);
 
             return view;
         }

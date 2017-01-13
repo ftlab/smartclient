@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SmartClient.Core.Forms
 {
-    public class FlyoutForm: FlyoutDialog
+    public class FlyoutForm : FlyoutDialog
     {
         private static readonly Form _defaultForm;
 
@@ -27,8 +27,8 @@ namespace SmartClient.Core.Forms
         private void CloseSupport_SupportDialogResult(object sender, SupportDialogResultEventArgs e)
         {
             DialogResult = e.Result;
-	        if (DialogResult == DialogResult.None)
-		        return;
+            if (DialogResult == DialogResult.None)
+                return;
             Close();
 
             var closeSupport = FlyoutControl as ISupportDialogResult;
@@ -76,13 +76,13 @@ namespace SmartClient.Core.Forms
             return ShowBox(_defaultForm, action, control);
         }
 
-        public static DialogResult ShowEditBox(string caption, ref string input, int? maxLength=null)
+        public static DialogResult ShowEditBox(string caption, ref string input, int? maxLength = null)
         {
             var action = new FlyoutAction();
             action.Caption = caption;
             using (var view = new EditBoxView())
             {
-                if(!string.IsNullOrEmpty(input))
+                if (!string.IsNullOrEmpty(input))
                     view.InputText = input;
                 if (maxLength.HasValue)
                     view.MaxLength = maxLength.Value;

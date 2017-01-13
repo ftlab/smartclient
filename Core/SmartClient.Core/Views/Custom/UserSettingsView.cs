@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
+﻿using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using SmartClient.Core.Container;
 using SmartClient.Core.Views.Custom.Model;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;

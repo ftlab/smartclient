@@ -33,12 +33,12 @@ namespace SmartClient.Core.Services.Impl
 
         private Form GetForm()
         {
-            if(_useFlyout)
+            if (_useFlyout)
                 return Form.ActiveForm ?? App.Instance?.MainForm?.Instance;
 
             return null;
         }
-        
+
         public void ShowError(string text, string caption)
         {
             var frm = GetForm();
@@ -102,7 +102,7 @@ namespace SmartClient.Core.Services.Impl
                 var text = string.Format("Возникла ошибка! За подробностями обратитесь к администратору системы.");
                 XtraMessageBox.Show(text, "Ошибка", MessageBoxButtons.YesNo, MessageBoxIcon.Error);                
 #endif
-                
+
             }
         }
     }

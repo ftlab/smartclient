@@ -76,7 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppModel\App.cs" />
+    <Compile Include="Services\App.cs" />
     <Compile Include="AppModel\App.Init.cs" />
     <Compile Include="AppModel\AppRegistrator.cs" />
     <Compile Include="AppModel\BaseModule.cs" />
@@ -160,7 +160,6 @@
     </Compile>
     <Compile Include="Messages\GoBackEvent.cs" />
     <Compile Include="Messages\GoToHomeEvent.cs" />
-    <Compile Include="Messages\IncomingMessageEvent.cs" />
     <Compile Include="Messages\NavigateToViewEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

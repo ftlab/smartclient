@@ -8,7 +8,7 @@ using System.Drawing;
 namespace SmartClient.Core.Controls
 {
     [ToolboxItem(true)]
-    public class FillButton: SimpleButton
+    public class FillButton : SimpleButton
     {
         public FillButton()
         {
@@ -30,7 +30,7 @@ namespace SmartClient.Core.Controls
             Size = new Size(117, 33);
             ButtonStyle = BorderStyles.HotFlat;
             ShowFocusRectangle = DefaultBoolean.False;
-            
+
             ResumeLayout(false);
         }
 

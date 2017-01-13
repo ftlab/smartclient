@@ -73,11 +73,6 @@ namespace SmartClient.Core.AppModel
                         {
                             Image = Resources.customer_32x32,
                             Caption = GetUserCaption(),
-                        },
-                        new QuickButtonViewInfo("DualWcf")
-                        {
-                            Image = Resources.green_circle,
-                            Caption = null,
                         }
                     };
                 });
@@ -111,8 +106,6 @@ namespace SmartClient.Core.AppModel
             ServiceContainer.Default.NotificationService.Subscribe<GoToHomeEvent>(OnGoToHomeEvent);
             ServiceContainer.Default.NotificationService.Subscribe<GoBackEvent>(OnGoBackEvent);
             ServiceContainer.Default.NotificationService.Subscribe<NavigateToViewEvent>(OnNavigateToViewEvent);
-            ServiceContainer.Default.NotificationService.Subscribe<IncomingMessageEvent>(OnIncomingMessageEvent);
-            ServiceContainer.Default.NotificationService.Subscribe<DualWcfMessageEvent>(OnDualWcfMessageEvent);
         }
 
         private string GetUserCaption()
@@ -121,34 +114,6 @@ namespace SmartClient.Core.AppModel
         }
 
         #region event handlers
-
-        private void OnIncomingMessageEvent(IncomingMessageEvent notification)
-        {
-            var ribbon = App.Instance.Resolve<IMainForm>().RibbonControl;
-            foreach (BarItemLink itemLink in ribbon.Toolbar.ItemLinks)
-            {
-                var info = itemLink.Item.Tag as QuickButtonViewInfo;
-                if (info != null && info.Name == "IncomingMail")
-                {
-                    itemLink.Item.Caption = notification.Count.ToString();
-                    break;
-                }
-            }
-        }
-        private void OnDualWcfMessageEvent(DualWcfMessageEvent notification)
-        {
-            var ribbon = App.Instance.Resolve<IMainForm>().RibbonControl;
-            foreach (BarItemLink itemLink in ribbon.Toolbar.ItemLinks)
-            {
-                var info = itemLink.Item.Tag as QuickButtonViewInfo;
-                if (info != null && info.Name == "DualWcf")
-                {
-                    itemLink.Item.Glyph = notification.Enabled ? Resources.green_circle : Resources.red_circle;
-                    break;
-                }
-            }
-        }
-
 
         private void OnGoToHomeEvent(GoToHomeEvent notification)
         {

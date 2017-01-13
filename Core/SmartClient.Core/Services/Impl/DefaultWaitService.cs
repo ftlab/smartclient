@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
-using System;
 using System.Windows.Forms;
 
 namespace SmartClient.Core.Services.Impl

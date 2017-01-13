@@ -1,5 +1,4 @@
-﻿using System;
-using SmartClient.Core.AppModel.Info;
+﻿using SmartClient.Core.AppModel.Info;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 
 namespace SmartClient.Core.AppModel

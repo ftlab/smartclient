@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using SmartClient.Core.Views;
 
 namespace SmartClient.Core.ViewModels
 {
@@ -64,7 +63,7 @@ namespace SmartClient.Core.ViewModels
     public class CheckViewCommand : ViewCommand
     {
         public CheckViewCommand(string caption, Image image = null, string toolTip = null, string group = null, CheckState state = CheckState.Unchecked)
-            :base(caption,image,toolTip,group)
+            : base(caption, image, toolTip, group)
         {
             Caption = caption;
             Image = image;
