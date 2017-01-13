@@ -6,7 +6,7 @@ using SmartClient.Core.AppModel.Info;
 
 namespace SmartClient.Core.Views
 {
-    public partial class FlatView : XtraUserControl, IView, ISupportDocumentActions, ISupportNavigation, ISupportKeyProcess
+    public abstract partial class FlatView : XtraUserControl, IView, ISupportDocumentActions, ISupportNavigation, ISupportKeyProcess
     {
         public FlatView()
         {

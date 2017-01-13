@@ -6,7 +6,7 @@ using SmartClient.Core.Container;
 
 namespace SmartClient.Core.Views
 {
-    public partial class BaseDictionaryView : FlatView, IDictionaryView
+    public abstract partial class BaseDictionaryView : FlatView, IDictionaryView
     {
         public BaseDictionaryView()
         {
@@ -37,12 +37,12 @@ namespace SmartClient.Core.Views
             yield return DictionaryCommand.Refresh;
         }
 
-        public virtual void OnNavigatedFrom(INavigationArgs args)
+        public override void OnNavigatedFrom(INavigationArgs args)
         {
             ClearData();
         }
 
-        public virtual void OnNavigatedTo(INavigationArgs args)
+        public override void OnNavigatedTo(INavigationArgs args)
         {
             RefreshData();
         }

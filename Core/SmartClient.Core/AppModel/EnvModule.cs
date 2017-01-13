@@ -117,9 +117,6 @@ namespace SmartClient.Core.AppModel
 
         private string GetUserCaption()
         {
-#if DEBUG
-            return Environment.UserName;
-#endif
             return Environment.UserName;
         }
 

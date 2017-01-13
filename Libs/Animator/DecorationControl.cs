@@ -14,7 +14,7 @@ namespace AnimatorNS
     {
         public DecorationType DecorationType { get; set; }
         public Control DecoratedControl { get; set; }
-        public Padding Padding { get;set;}
+        public new Padding Padding { get; set; }
         public Bitmap CtrlBmp { get; set; }
         public byte[] CtrlPixels { get; set; }
         public int CtrlStride { get; set; }
@@ -47,7 +47,7 @@ namespace AnimatorNS
 
         private void InitPadding()
         {
-            switch(DecorationType)
+            switch (DecorationType)
             {
                 case AnimatorNS.DecorationType.BottomMirror:
                     Padding = new Padding(0, 0, 0, 20);
@@ -85,7 +85,7 @@ namespace AnimatorNS
         }
 
         protected override void OnPaint(PaintEventArgs e)
-        {           
+        {
             CtrlBmp = GetForeground(DecoratedControl);
             CtrlPixels = GetPixels(CtrlBmp);
 
@@ -110,15 +110,15 @@ namespace AnimatorNS
             this.Visible = DecoratedControl.Visible;
             this.Location = new Point(DecoratedControl.Left - Padding.Left, DecoratedControl.Top - Padding.Top);
 
-            
+
             if (Parent != null)
             {
                 var i = Parent.Controls.GetChildIndex(DecoratedControl);
                 Parent.Controls.SetChildIndex(this, i + 1);
             }
-            
+
             var newSize = new Size(DecoratedControl.Width + Padding.Left + Padding.Right, DecoratedControl.Height + Padding.Top + Padding.Bottom);
-            if(newSize != Size)
+            if (newSize != Size)
             {
                 this.Size = newSize;
             }
@@ -192,7 +192,8 @@ namespace AnimatorNS
                             case DecorationType.BottomMirror: TransfromHelper.DoBottomMirror(e); break;
                         }
                     }
-                }catch{}
+                }
+                catch { }
 
                 Marshal.Copy(argbValues, 0, ptr, numBytes);
                 bmp.UnlockBits(bmpData);

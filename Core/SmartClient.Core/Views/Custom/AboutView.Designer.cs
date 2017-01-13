@@ -34,8 +34,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 60F);
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
@@ -45,7 +45,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(591, 295);
             this.labelControl2.TabIndex = 8;
-            this.labelControl2.Text = "ФИНТЕХ";
+            this.labelControl2.Text = "SMART CLIENT";
             // 
             // windowsUIButtonPanel1
             // 

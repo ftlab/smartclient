@@ -7,7 +7,7 @@ namespace SmartClient.Core.Views
     /// <summary>
     ///  Базовый компонент страницы визарда (шага)
     /// </summary>
-    public partial class BaseWizardPage : FlatView, ISupportNavigation
+    public abstract partial class BaseWizardPage : FlatView, ISupportNavigation
     {
         public BaseWizardPage()
         {
@@ -26,7 +26,7 @@ namespace SmartClient.Core.Views
 
         #region ISupportNavigation Members        
 
-        public virtual void OnNavigatedTo(INavigationArgs args)
+        public override void OnNavigatedTo(INavigationArgs args)
         {
             WizardViewModel = args.Parameter as BaseWizardViewModel;
             if (WizardViewModel == null)
@@ -34,7 +34,7 @@ namespace SmartClient.Core.Views
             wizardBindingSource.DataSource = WizardViewModel;
         }
 
-        public virtual void OnNavigatedFrom(INavigationArgs args)
+        public override void OnNavigatedFrom(INavigationArgs args)
         {
 
         }

@@ -26,10 +26,9 @@ namespace AnimatorNS
     /// <summary>
     /// Animation manager
     /// </summary>
-    [ProvideProperty("Decoration", typeof(Control))] 
+    [ProvideProperty("Decoration", typeof(Control))]
     public class Animator : Component, IExtenderProvider
     {
-        IContainer components = null;
         protected List<QueueItem> queue = new List<QueueItem>();
         private Thread thread;
         Timer timer;
@@ -81,8 +80,8 @@ namespace AnimatorNS
         /// Are all animations completed?
         /// </summary>
         public bool IsCompleted
-        { 
-            get { lock(queue) return queue.Count == 0; }
+        {
+            get { lock (queue) return queue.Count == 0; }
         }
 
         /// <summary>
@@ -99,7 +98,7 @@ namespace AnimatorNS
         /// <summary>
         /// Type of built-in animation
         /// </summary>
-        public AnimationType AnimationType 
+        public AnimationType AnimationType
         {
             get { return animationType; }
             set { animationType = value; InitDefaultAnimation(animationType); }
@@ -168,9 +167,9 @@ namespace AnimatorNS
 
         void Work()
         {
-            while(true)
+            while (true)
             {
-                if(_abort.WaitOne(Interval))
+                if (_abort.WaitOne(Interval))
                     return;
 
                 //Thread.Sleep(Interval);
@@ -258,15 +257,16 @@ namespace AnimatorNS
             {
                 var dict = new Dictionary<Control, QueueItem>();
                 foreach (var item in requests)
-                if(item.control != null)
-                {
-                    if (dict.ContainsKey(item.control))
-                        toRemove.Add(dict[item.control]);
-                    dict[item.control] = item;
-                }else
-                    toRemove.Add(item);
+                    if (item.control != null)
+                    {
+                        if (dict.ContainsKey(item.control))
+                            toRemove.Add(dict[item.control]);
+                        dict[item.control] = item;
+                    }
+                    else
+                        toRemove.Add(item);
 
-                foreach(var item in dict.Values)
+                foreach (var item in dict.Values)
                 {
                     if (item.control != null && !IsStateOK(item.control, item.mode))
                     {
@@ -315,8 +315,6 @@ namespace AnimatorNS
                 }
             }));
         }
-
-        int counter;
 
         private void DoAnimation(QueueItem item)
         {
@@ -489,15 +487,15 @@ namespace AnimatorNS
             while (true)
             {
                 bool flag = false;
-                lock(queue)
-                foreach(var item in queue)
-                    if (item.control == animatedControl)
-                    {
-                        flag = true;
-                        break;
-                    }
+                lock (queue)
+                    foreach (var item in queue)
+                        if (item.control == animatedControl)
+                        {
+                            flag = true;
+                            break;
+                        }
 
-                if(!flag)
+                if (!flag)
                     return;
 
                 Application.DoEvents();
@@ -527,7 +525,7 @@ namespace AnimatorNS
         /// <param name="animation">Personal animation</param> 
         public void AddToQueue(Control control, AnimateMode mode, bool parallel = true, Animation animation = null, Rectangle clipRectangle = default(Rectangle))
         {
-            if(animation == null)
+            if (animation == null)
                 animation = DefaultAnimation;
 
             if (control is IFakeControl)
@@ -544,7 +542,7 @@ namespace AnimatorNS
                 case AnimateMode.Show:
                     if (control.Visible)//already showed
                     {
-                        OnCompleted(new QueueItem {control = control, mode = mode});
+                        OnCompleted(new QueueItem { control = control, mode = mode });
                         return;
                     }
                     break;
@@ -587,13 +585,14 @@ namespace AnimatorNS
             try
             {
                 //transform point to animated control's coordinates 
-                var db = (Controller) sender;
+                var db = (Controller)sender;
                 var l = e.Location;
                 l.Offset(db.DoubleBitmap.Left - db.AnimatedControl.Left, db.DoubleBitmap.Top - db.AnimatedControl.Top);
                 //
                 if (MouseDown != null)
                     MouseDown(sender, new MouseEventArgs(e.Button, e.Clicks, l.X, l.Y, e.Delta));
-            }catch
+            }
+            catch
             {
             }
         }
@@ -664,7 +663,7 @@ namespace AnimatorNS
             public Animation animation;
             public Controller controller;
             public Control control;
-            public DateTime ActivateTime { get; private set;}
+            public DateTime ActivateTime { get; private set; }
             public AnimateMode mode;
             public Rectangle clipRectangle;
 
@@ -702,13 +701,13 @@ namespace AnimatorNS
             else
                 return DecorationType.None;
         }
-        
+
         public void SetDecoration(Control control, DecorationType decoration)
         {
             var wrapper = DecorationByControls.ContainsKey(control) ? DecorationByControls[control] : null;
             if (decoration == DecorationType.None)
             {
-                if (wrapper!=null)
+                if (wrapper != null)
                     wrapper.Dispose();
                 DecorationByControls.Remove(control);
             }
