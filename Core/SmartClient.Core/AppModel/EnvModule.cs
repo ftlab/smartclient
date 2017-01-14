@@ -28,6 +28,8 @@ namespace SmartClient.Core.AppModel
 
         private AppBar _appBar;
 
+        private readonly List<LinkedList<IContentContainer>> _nav = new List<LinkedList<IContentContainer>>();
+
         public override ModuleInfo GetInfo()
         {
             var builder = new ModuleInfoBuilder();
@@ -90,16 +92,40 @@ namespace SmartClient.Core.AppModel
             _documentManager = form.DocumentManager;
             _appBar = form.AppBar;
             _appBar.AppBarItemClick += _appBar_AppBarItemClick;
+            _view.ContentContainerActivated += _view_ContentContainerActivated;
+        }
+
+        private void _view_ContentContainerActivated(object sender, ContentContainerEventArgs e)
+        {
+            var curr = e.ContentContainer;
+            var list = new LinkedList<IContentContainer>();
+            while (curr != null && curr != _mainContainer)
+            {
+                list.AddFirst(curr);
+                curr = curr.Parent;
+            }
+            if (list.Count > 0)
+            {
+                var node = _nav.FirstOrDefault(x => x.First.Value == list.First.Value);
+                if (node != null)
+                    _nav.Remove(node);
+                _nav.Add(list);
+            }
         }
 
         private void _appBar_AppBarItemClick(object sender, AppBarItemClickEventArgs e)
         {
             if (e.Item != null)
             {
-                var document = e.Item.Data as Document;
-                if (document != null)
-                    _view.ActivateDocument(document);
-
+                var container = e.Item.Data as BaseContentContainer;
+                if (container != null)
+                {
+                    var node = _nav.FirstOrDefault(x => x.First.Value == container);
+                    if (node != null)
+                        _view.ActivateContainer(node.Last.Value);
+                    else
+                        _view.ActivateContainer(container);
+                }
             }
         }
 

@@ -221,7 +221,7 @@ namespace SmartClient.Core.AppModel
             barItem.Caption = view.Caption;
             barItem.Decription = view.Caption;
             barItem.Image = view.Image;
-            barItem.Data = document;
+            barItem.Data = container; ;
 
             form.AppBar.AddItem(barItem);
         }
