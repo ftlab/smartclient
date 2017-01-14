@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new SmartClient.Core.Forms.QuickRibbonControl();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.workSpaceView1 = new SmartClient.Core.Views.WorkSpaceView();
+            this.appBar1 = new SmartClient.Core.Controls.Bars.AppBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.SuspendLayout();
@@ -47,8 +49,8 @@
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl.ShowQatLocationSelector = false;
             this.ribbonControl.ShowToolbarCustomizeItem = false;
@@ -74,10 +76,38 @@
             // workSpaceView1
             // 
             this.workSpaceView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workSpaceView1.Location = new System.Drawing.Point(0, 27);
+            this.workSpaceView1.Location = new System.Drawing.Point(33, 27);
             this.workSpaceView1.Name = "workSpaceView1";
-            this.workSpaceView1.Size = new System.Drawing.Size(1090, 396);
+            this.workSpaceView1.Size = new System.Drawing.Size(1057, 396);
             this.workSpaceView1.TabIndex = 1;
+            // 
+            // appBar1
+            // 
+            this.appBar1.AllowDrag = false;
+            this.appBar1.AllowSelectedItem = true;
+            this.appBar1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.appBar1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.appBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.appBar1.GroupTextToItemsIndent = 0;
+            this.appBar1.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.appBar1.IndentBetweenGroups = 0;
+            this.appBar1.IndentBetweenItems = 0;
+            this.appBar1.ItemImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.appBar1.ItemPadding = new System.Windows.Forms.Padding(0);
+            this.appBar1.ItemSize = 32;
+            this.appBar1.ItemTextShowMode = DevExpress.XtraEditors.TileItemContentShowMode.Always;
+            this.appBar1.Location = new System.Drawing.Point(0, 27);
+            this.appBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.appBar1.Name = "appBar1";
+            this.appBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.appBar1.Padding = new System.Windows.Forms.Padding(0);
+            this.appBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.appBar1.SelectionColorMode = DevExpress.XtraBars.Navigation.SelectionColorMode.UseItemBackColor;
+            this.appBar1.ShowGroupText = false;
+            this.appBar1.Size = new System.Drawing.Size(33, 396);
+            this.appBar1.TabIndex = 3;
+            this.appBar1.Text = "appBar1";
+            this.appBar1.VerticalContentAlignment = DevExpress.Utils.VertAlignment.Top;
             // 
             // MainForm
             // 
@@ -85,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 423);
             this.Controls.Add(this.workSpaceView1);
+            this.Controls.Add(this.appBar1);
             this.Controls.Add(this.ribbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -104,5 +135,6 @@
         private QuickRibbonControl ribbonControl;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private Views.WorkSpaceView workSpaceView1;
+        private Controls.Bars.AppBar appBar1;
     }
 }

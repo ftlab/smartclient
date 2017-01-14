@@ -80,6 +80,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Bars\AppBarItem.cs" />
+    <Compile Include="Controls\Bars\AppBarItemClickEventArgs.cs" />
     <Compile Include="Controls\Bars\AppBarPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

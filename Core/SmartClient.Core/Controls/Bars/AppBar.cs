@@ -24,9 +24,16 @@ namespace SmartClient.Core.Controls.Bars
             InitializeComponent();
         }
 
+        public event EventHandler<AppBarItemClickEventArgs> AppBarItemClick;
+
         public FlyoutPanel FlyoutPanel => flyoutPanel1;
 
         internal BindingList<AppBarItem> Items => _items;
+
+        private void AppBarItemClickCore(AppBarItem item)
+        {
+            AppBarItemClick?.Invoke(this, new AppBarItemClickEventArgs(item));
+        }
 
         private void InitializeComponent()
         {
@@ -207,6 +214,7 @@ namespace SmartClient.Core.Controls.Bars
             var item = appBarPanel1.ActiveItem;
             if (item == null) throw new NullReferenceException(nameof(item));
             ActivateItem(item.Name);
+            AppBarItemClickCore(item);
         }
 
         public void SwithPinItem(string name)
@@ -226,7 +234,10 @@ namespace SmartClient.Core.Controls.Bars
             {
                 var data = e.Item.Tag as AppBarItem;
                 if (data != null)
+                {
                     ActivateItem(data.Name);
+                    AppBarItemClickCore(data);
+                }
             }
         }
     }

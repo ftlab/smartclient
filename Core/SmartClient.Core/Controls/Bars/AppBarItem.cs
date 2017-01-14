@@ -22,5 +22,7 @@ namespace SmartClient.Core.Controls.Bars
 
         [Display(Name = "Прикреплен")]
         public bool Pinned => AppBarSettings.IsPinned(Name);
+
+        public object Data { get; set; }
     }
 }

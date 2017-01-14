@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartClient.Core.Container;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -10,6 +11,10 @@ namespace SmartClient.Core.Controls.Bars
 
         private static readonly Queue<string> _last = new Queue<string>();
 
+        private static string PinnedViewsSettings = "Bar_PinnedViews";
+
+        private static string LastViewsSettings = "Bar_LastViews";
+
         static AppBarSettings()
         {
             ReadSettings();
@@ -19,24 +24,37 @@ namespace SmartClient.Core.Controls.Bars
         {
             var pinned = string.Join(";", _pinned);
             var last = string.Join(";", _last);
-            File.WriteAllText("appbar.settings", pinned + Environment.NewLine + last);
+
+            ServiceContainer.Default
+                .UserSettingsService
+                .Set<string>(PinnedViewsSettings, pinned);
+            ServiceContainer.Default
+                .UserSettingsService
+                .Set<string>(LastViewsSettings, last);
         }
 
         public static void ReadSettings()
         {
-            if (File.Exists("appbar.settings") == false)
-                return;
-
-            var text = File.ReadAllText("appbar.settings");
             _pinned.Clear();
             _last.Clear();
-            var lines = text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            if (lines.Length > 0)
-                foreach (var item in lines[0].Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
+
+            var pinned = ServiceContainer.Default
+                .UserSettingsService
+                .Get<string>(PinnedViewsSettings);
+            if (string.IsNullOrEmpty(pinned) == false)
+            {
+                foreach (var item in pinned.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
                     SetPinned(item);
-            if (lines.Length > 1)
-                foreach (var item in lines[1].Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
+            }
+
+            var last = ServiceContainer.Default
+                .UserSettingsService
+                .Get<string>(LastViewsSettings);
+            if (string.IsNullOrEmpty(last) == false)
+            {
+                foreach (var item in last.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
                     SetLast(item);
+            }
         }
 
         public static bool SetPinned(string itemName)
@@ -55,6 +73,7 @@ namespace SmartClient.Core.Controls.Bars
 
         public static void SetLast(string itemName)
         {
+            if (_last.Contains(itemName)) return;
             if (_last.Count > 2)
                 _last.Dequeue();
             _last.Enqueue(itemName);

@@ -12,6 +12,7 @@ using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using SmartClient.Core.Container;
 using Microsoft.Practices.Unity;
 using DevExpress.XtraBars;
+using SmartClient.Core.Controls.Bars;
 
 namespace SmartClient.Core.AppModel
 {
@@ -24,6 +25,8 @@ namespace SmartClient.Core.AppModel
         private TileContainer _mainContainer;
 
         private WindowsUIView _view;
+
+        private AppBar _appBar;
 
         public override ModuleInfo GetInfo()
         {
@@ -85,6 +88,19 @@ namespace SmartClient.Core.AppModel
             _view = form.WindowsUiView;
             _mainContainer = form.MainContainer;
             _documentManager = form.DocumentManager;
+            _appBar = form.AppBar;
+            _appBar.AppBarItemClick += _appBar_AppBarItemClick;
+        }
+
+        private void _appBar_AppBarItemClick(object sender, AppBarItemClickEventArgs e)
+        {
+            if (e.Item != null)
+            {
+                var document = e.Item.Data as Document;
+                if (document != null)
+                    _view.ActivateDocument(document);
+
+            }
         }
 
         /// <summary>

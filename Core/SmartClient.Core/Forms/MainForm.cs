@@ -8,6 +8,7 @@ using SmartClient.Core.Container;
 using SmartClient.Core.AppModel.Info;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Docking;
+using SmartClient.Core.Controls.Bars;
 
 namespace SmartClient.Core.Forms
 {
@@ -25,6 +26,8 @@ namespace SmartClient.Core.Forms
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
             }
+
+            appBar1.flyoutPanel1.OwnerControl = workSpaceView1;
         }
 
         /// <summary>
@@ -62,6 +65,8 @@ namespace SmartClient.Core.Forms
         public WindowsUIView WindowsUiView => workSpaceView1.windowsUIView1;
 
         public RibbonControl RibbonControl => ribbonControl;
+
+        public AppBar AppBar => appBar1;
 
         private void ribbonControl_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

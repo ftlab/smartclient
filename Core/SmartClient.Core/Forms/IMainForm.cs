@@ -3,6 +3,7 @@ using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Docking;
+using SmartClient.Core.Controls.Bars;
 
 namespace SmartClient.Core.Forms
 {
@@ -19,5 +20,7 @@ namespace SmartClient.Core.Forms
         RibbonControl RibbonControl { get; }
 
         DockManager DockManager { get; }
+
+        AppBar AppBar { get; }
     }
 }

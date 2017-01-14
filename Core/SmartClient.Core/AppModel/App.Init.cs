@@ -14,6 +14,7 @@ using SmartClient.Core.Container;
 using DevExpress.XtraBars;
 using System.Collections.Generic;
 using Common.Logging;
+using SmartClient.Core.Controls.Bars;
 
 namespace SmartClient.Core.AppModel
 {
@@ -214,6 +215,15 @@ namespace SmartClient.Core.AppModel
                     container.Parent = parentContainer;
                 }
             }
+
+            var barItem = new AppBarItem();
+            barItem.Name = view.Name;
+            barItem.Caption = view.Caption;
+            barItem.Decription = view.Caption;
+            barItem.Image = view.Image;
+            barItem.Data = document;
+
+            form.AppBar.AddItem(barItem);
         }
 
         private void InitContainer(ContainerInfo container)
