@@ -76,6 +76,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Bars\AppBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Bars\AppBarItem.cs" />
+    <Compile Include="Controls\Bars\AppBarPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Bars\AppBarPanel.designer.cs">
+      <DependentUpon>AppBarPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Bars\AppBarSettings.cs" />
     <Compile Include="Services\App.cs" />
     <Compile Include="AppModel\App.Init.cs" />
     <Compile Include="AppModel\AppRegistrator.cs" />
@@ -303,6 +314,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\Bars\AppBar.resx">
+      <DependentUpon>AppBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Bars\AppBarPanel.resx">
+      <DependentUpon>AppBarPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SmartSplashScreen.resx">
       <DependentUpon>SmartSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -466,6 +483,18 @@
       <Project>{d887ea99-c610-4764-9182-964d30666eac}</Project>
       <Name>Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activetile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\push-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
