@@ -12,18 +12,9 @@ namespace SmartClient.Core.Forms
         public SmartWaitForm()
         {
             ShowOnTopMode = ShowFormOnTopMode.AboveAll;
-            ChangeLoadingPicture();
 
             InitializeComponent();
             this.progressPanel1.AutoHeight = true;
-        }
-
-
-        private void ChangeLoadingPicture()
-        {
-            Skin commonSkin = CommonSkins.GetSkin(UserLookAndFeel.Default.ActiveLookAndFeel);
-            SkinElement loadingBig = commonSkin["LoadingBig"];
-            loadingBig.Image.SetImage(Resources.w8loader, Color.Empty);
         }
 
         #region Overrides
