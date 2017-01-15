@@ -216,14 +216,17 @@ namespace SmartClient.Core.AppModel
                 }
             }
 
-            var barItem = new AppBarItem();
-            barItem.Name = view.Name;
-            barItem.Caption = view.Caption;
-            barItem.Decription = view.Caption;
-            barItem.Image = view.Image;
-            barItem.Data = container; ;
+            if (view.ShowInTileContainer && view.ShowInAppBar)
+            {
+                var barItem = new AppBarItem();
+                barItem.Name = view.Name;
+                barItem.Caption = view.Caption;
+                barItem.Decription = view.Caption;
+                barItem.Image = view.Image;
+                barItem.Data = container;
 
-            form.AppBar.AddItem(barItem);
+                form.AppBar.AddItem(barItem);
+            }
         }
 
         private void InitContainer(ContainerInfo container)

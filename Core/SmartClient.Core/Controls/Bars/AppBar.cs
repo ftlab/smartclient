@@ -83,6 +83,7 @@ namespace SmartClient.Core.Controls.Bars
             this.flyoutPanel1.Options.CloseOnOuterClick = true;
             this.flyoutPanel1.Size = new System.Drawing.Size(700, 600);
             this.flyoutPanel1.TabIndex = 0;
+            this.flyoutPanel1.Showing += FlyoutPanel1_Showing;
             // 
             // flyoutPanelControl1
             // 
@@ -134,6 +135,11 @@ namespace SmartClient.Core.Controls.Bars
             this.flyoutPanelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void FlyoutPanel1_Showing(object sender, FlyoutPanelEventArgs e)
+        {
+            appBarPanel1.RefreshData();
         }
 
         private void MainItem_ItemClick()

@@ -20,6 +20,12 @@ namespace SmartClient.Core.Controls.Bars
 
         public AppBar GetAppBar() => _appBar;
 
+        public void RefreshData()
+        {
+            gridControl1.RefreshDataSource();
+            gridControl2.RefreshDataSource();
+        }
+
         public void SetAppBar(AppBar appBar)
         {
             if (appBar == null) throw new ArgumentNullException(nameof(appBar));

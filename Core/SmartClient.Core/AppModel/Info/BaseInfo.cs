@@ -31,6 +31,8 @@ namespace SmartClient.Core.AppModel.Info
 
         public bool ShowInTileContainer { get; set; }
 
+        public bool ShowInAppBar { get; set; } = true;
+
         public ModuleInfo Module
         {
             get
