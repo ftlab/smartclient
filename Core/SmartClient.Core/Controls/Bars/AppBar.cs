@@ -198,8 +198,9 @@ namespace SmartClient.Core.Controls.Bars
 
         public void ActivateItem(string name)
         {
-            var barItem = AddOrGetItem(name);
+            if (_items.Any(x => x.Name == name) == false) return;
 
+            var barItem = AddOrGetItem(name);
             if (barItem.Elements.Count < 2)
             {
                 var active = new TileItemElement();

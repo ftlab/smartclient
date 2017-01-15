@@ -10,8 +10,6 @@ using SmartClient.Core.Views.Custom;
 using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using SmartClient.Core.Container;
-using Microsoft.Practices.Unity;
-using DevExpress.XtraBars;
 using SmartClient.Core.Controls.Bars;
 
 namespace SmartClient.Core.AppModel
@@ -110,6 +108,11 @@ namespace SmartClient.Core.AppModel
                 if (node != null)
                     _nav.Remove(node);
                 _nav.Add(list);
+            }
+            var view = e.ContentContainer.Tag as ViewInfo;
+            if (view != null && view.ShowInAppBar)
+            {
+                _appBar.ActivateItem(view.Name);
             }
         }
 
