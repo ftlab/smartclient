@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.Utils;
+using System.Drawing;
 
 namespace SmartClient.Core.Controls.Bars
 {
@@ -11,9 +12,22 @@ namespace SmartClient.Core.Controls.Bars
 
         public event EventHandler ItemClick;
 
+        private Brush _b1 = new SolidBrush(Color.FromArgb(91, 122, 172));
+
         public AppBarPanel()
         {
             InitializeComponent();
+
+            winExplorerView1.CustomDrawItem += WinExplorerView1_CustomDrawItem;
+        }
+
+        private void WinExplorerView1_CustomDrawItem(object sender, DevExpress.XtraGrid.Views.WinExplorer.WinExplorerViewCustomDrawItemEventArgs e)
+        {
+            if (e.IsHovered == false)
+            {
+                e.Graphics.FillRectangle(_b1, e.ImageContentBounds);
+                e.DrawItemImage();
+            }
         }
 
         public AppBarItem ActiveItem => appBarItemBindingSource.Current as AppBarItem;

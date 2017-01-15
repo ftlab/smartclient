@@ -116,7 +116,7 @@
             // 
             // appBarItemBindingSource
             // 
-            this.appBarItemBindingSource.DataSource = typeof(AppBarItem);
+            this.appBarItemBindingSource.DataSource = typeof(SmartClient.Core.Controls.Bars.AppBarItem);
             // 
             // winExplorerView1
             // 
@@ -145,7 +145,7 @@
             this.winExplorerView1.OptionsViewStyles.Tiles.GroupCheckBoxIndent = 0;
             this.winExplorerView1.OptionsViewStyles.Tiles.HorizontalIndent = 0;
             this.winExplorerView1.OptionsViewStyles.Tiles.ImageMargins = new System.Windows.Forms.Padding(0);
-            this.winExplorerView1.OptionsViewStyles.Tiles.ImageSize = new System.Drawing.Size(24, 24);
+            this.winExplorerView1.OptionsViewStyles.Tiles.ImageSize = new System.Drawing.Size(32, 32);
             this.winExplorerView1.OptionsViewStyles.Tiles.IndentBetweenGroupAndItem = 0;
             this.winExplorerView1.OptionsViewStyles.Tiles.IndentBetweenGroups = 0;
             this.winExplorerView1.OptionsViewStyles.Tiles.ShowDescription = DevExpress.Utils.DefaultBoolean.False;
